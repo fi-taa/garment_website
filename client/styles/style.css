@@ -1,0 +1,301 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header Section */
+  header {
+    background-color: #f5f5f5;
+    padding: 10px;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-container h1 {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  nav ul li a.active {
+    font-weight: bold;
+border-bottom: 2px solid #333;
+
+  }
+  
+  @media (max-width: 768px) {
+    .header-container {
+      align-items: flex-start;
+    }
+  
+    .header-container h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  
+    nav ul li {
+      margin-right: 10px;
+    }
+  }
+  
+  
+  /* Hero Section */
+  .hero {
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 0;
+    color: black;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+  
+  /* Featured Products Section */
+  .featured-products {
+    padding: 20px;
+  }
+  
+  .featured-products h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .product-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .product {
+    width: 30%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .product p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .product {
+      width: 48%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product {
+      width: 100%;
+    }
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    background-color: #f5f5f5;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .testimonial {
+    margin-bottom: 30px;
+  }
+  
+  .testimonial p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial p:last-child {
+    font-weight: bold;
+  }
+  
+  /* About Us Section */
+  .about-us {
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .about-us p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* Contact Section */
+  .contact {
+    background-color: #333;
+    padding: 40px 0;
+    text-align: center;
+    color:#fff;
+}
+
+.contact h2 {
+color: #fff;
+font-size: 32px;
+margin-bottom: 20px;
+}
+
+.contact p {
+color: #fff;
+font-size: 18px;
+margin-bottom: 30px;
+}
+
+.contact-info {
+margin-bottom: 30px;
+}
+
+.contact-info p {
+font-size: 16px;
+margin-bottom: 10px;
+}
+
+/* Footer Section */
+footer {
+background-color: #f5f5f5;
+padding: 10px;
+text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+.container {
+padding: 10px;
+}
+
+.hero {
+padding: 50px 0;
+}
+
+.hero h1 {
+font-size: 28px;
+}
+
+.hero p {
+font-size: 16px;
+margin-bottom: 20px;
+}
+
+.btn {
+padding: 8px 16px;
+}
+
+.product img {
+width: 150px;
+height: 150px;
+}
+}
+
+@media (max-width: 480px) {
+.hero h1 {
+font-size: 24px;
+}
+
+.hero p {
+font-size: 14px;
+margin-bottom: 10px;
+}
+
+.btn {
+padding: 6px 12px;
+}
+
+.product img {
+width: 120px;
+height: 120px;
+}
+
+.testimonial p {
+font-size: 16px;
+margin-bottom: 5px;
+}
+
+.about-us p {
+font-size: 16px;
+margin-bottom: 15px;
+}
+
+.contact h2 {
+font-size: 28px;
+margin-bottom: 15px;
+}
+
+.contact p {
+font-size: 16px;
+margin-bottom: 20px;
+}
+
+.contact-info p {
+font-size: 14px;
+margin-bottom: 5px;
+}
+}
+  
