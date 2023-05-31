@@ -81,6 +81,8 @@
     </footer>
 
     <script>
+
+        
         const categoryLinks = document.querySelectorAll('.category-nav ul li a');
 const productContainer = document.querySelector('.product-container');
 const domainSection = document.getElementById('domain-section');
@@ -99,14 +101,19 @@ function handleCategoryClick(event) {
     link.classList.remove('active');
   });
 
-  if (category === '') {
-    domainSection.href = 'product.php';
+  if (category === 'undefined') {
+    const allLink = document.getElementById('all');
+    allLink.setAttribute('href', 'product.php');
+    allLink.classList.add('active');
     fetchProducts('');
+    updateURL('');
   } else {
     clickedLink.classList.add('active');
     fetchProducts(category);
     updateURL(category);
   }
+}
+
 }
 
 function fetchProducts(category) {
