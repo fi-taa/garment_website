@@ -18,8 +18,6 @@
         </nav>
     </header>
 
-
-
     <div class="hero">
         <h2>Welcome to Garment Website</h2>
         <p>Discover our latest collection of fashionable garments</p>
@@ -75,87 +73,62 @@
         ?>
     </div>
 
-
     <footer>
         <p>&copy; 2023 Garment Website. All rights reserved.</p>
     </footer>
 
     <script>
-
-        
         const categoryLinks = document.querySelectorAll('.category-nav ul li a');
-const productContainer = document.querySelector('.product-container');
-const domainSection = document.getElementById('domain-section');
+        const productContainer = document.querySelector('.product-container');
 
-categoryLinks.forEach(link => {
-  link.addEventListener('click', handleCategoryClick);
-});
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', handleCategoryClick);
+        });
 
-function handleCategoryClick(event) {
-  event.preventDefault();
+        function handleCategoryClick(event) {
+            event.preventDefault();
 
-  const clickedLink = event.target;
-  const category = clickedLink.getAttribute('href').split('=')[1];
+            const clickedLink = event.target;
+            const category = clickedLink.getAttribute('href').split('=')[1];
 
-  categoryLinks.forEach(link => {
-    link.classList.remove('active');
-  });
+            categoryLinks.forEach(link => {
+                link.classList.remove('active');
+            });
 
-  if (category === 'undefined') {
-    const allLink = document.getElementById('all');
-    allLink.setAttribute('href', 'product.php');
-    allLink.classList.add('active');
-    fetchProducts('');
-    updateURL('');
-  } else {
-    clickedLink.classList.add('active');
-    fetchProducts(category);
-    updateURL(category);
-  }
-}
+            if (category === undefined) {
+                const allLink = document.getElementById('all');
+                allLink.setAttribute('href', 'product.php');
+                allLink.classList.add('active');
+                fetchProducts('');
+                updateURL('');
+            } else {
+                clickedLink.classList.add('active');
+                fetchProducts(category);
+                updateURL(category);
+            }
+        }
 
-}
+        function fetchProducts(category) {
+            // Make an AJAX request to fetch products based on the category
+            fetch(`fetch_products.php?category=${category}`)
+                .then(response => response.text())
+                .then(data => {
+                    // Update the product container with the fetched products
+                    productContainer.innerHTML = data;
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                });
+        }
 
-function fetchProducts(category) {
-  // Make an AJAX request to fetch products based on the category
-  fetch(`fetch_products.php?category=${category}`)
-    .then(response => response.text())
-    .then(data => {
-      // Update the product container with the fetched products
-      productContainer.innerHTML = data;
-    })
-    .catch(error => {
-      console.log('Error:', error);
-    });
-}
-
-function updateURL(category) {
-  const urlParams = new URLSearchParams(window.location.search);
-  urlParams.set('category', category);
-  const newURL = window.location.pathname + '?' + urlParams.toString();
-  window.history.pushState({
-    path: newURL
-  }, '', newURL);
-}
-
-// Get the category value from the URL query parameter
-const urlParams = new URLSearchParams(window.location.search);
-const categoryParam = urlParams.get('category');
-
-// Set the active class based on the category value
-if (categoryParam && categoryParam !== 'undefined') {
-  const activeLink = document.querySelector(`.category-nav ul li a[href*="${categoryParam}"]`);
-  if (activeLink) {
-    activeLink.classList.add('active');
-    const category = activeLink.getAttribute('href').split('=')[1];
-    fetchProducts(category);
-  }
-} else {
-  const allLink = document.querySelector('.category-nav ul li:first-child a');
-  allLink.classList.add('active');
-  fetchProducts('');
-}
-
+        function updateURL(category) {
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('category', category);
+            const newURL = window.location.pathname + '?' + urlParams.toString();
+            window.history.pushState({
+                path: newURL
+            }, '', newURL);
+        }
     </script>
 </body>
 
