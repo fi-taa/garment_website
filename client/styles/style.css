@@ -148,7 +148,8 @@ border-bottom: 2px solid #333;
   
   @media (max-width: 768px) {
     .product {
-      width: 48%;
+      width: 80%;
+      margin :auto !important;
     }
   }
   

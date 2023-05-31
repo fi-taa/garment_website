@@ -30,3 +30,11 @@ document.querySelectorAll('.cloth-types ul li a').forEach((link) => {
     });
   });
   
+function getProductName(){
+    // document.getElementById('product-name').innerHTML = "product-name : " + document.getElementById('prod').innerText;
+    console.log(document.getElementById('prod').innerText);
+  }
+console.log("================================");
+
+  getProductName();
+console.log("================================");

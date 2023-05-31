@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Haile Garment | Order</title>
+  <link rel="stylesheet" href="styles/order.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <style>
+    /* Styles for the order page */
+
+/* Container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Order Form */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-form label {
+  margin-bottom: 10px;
+}
+
+.order-form input[type="text"],
+.order-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.order-form button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.order-form button:hover {
+  background-color: #45a049;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="header-container">
+      <h1>Haile Garment</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Order Details Section -->
+  <section class="order-details">
+    <h2>Order Details</h2>
+    <div class="order-summary">
+      <h3 id="product-name">Product Name: </h3>
+      <p>Description: Description of </p>
+      <form action="checkout.html">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <button type="submit" class="btn">Proceed to Checkout</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2023 Haile Garment. All rights reserved.</p>
+  </footer>
+
+ <script src="./Scripts/script.js"></script>
+</body>
+</html>
