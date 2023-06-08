@@ -54,7 +54,6 @@ nav ul li a {
 
 .category-nav ul li {
   margin-right: 5px;
-  
 }
 
 .category-nav ul li a {
@@ -67,13 +66,11 @@ nav ul li a {
   transition: background-color 0.3s ease;
 }
 
-.category-nav ul li a.active, .category-nav ul li a:hover {
+.category-nav ul li a.active,
+.category-nav ul li a:hover {
   background-color: #333;
   color: #fff;
-
 }
-
-
 
 .hero {
   background-image: url('../images/hero.avif');
@@ -81,6 +78,7 @@ nav ul li a {
   background-position: center;
   height: 400px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #fff;
@@ -97,7 +95,6 @@ nav ul li a {
 }
 
 .product-container .product-card {
-  /* Add your desired CSS styles here */
   border: 2px solid #ccc;
   padding: 20px;
   margin-bottom: 20px;
@@ -107,32 +104,27 @@ nav ul li a {
 }
 
 .product-container .product-card img {
-  /* Styles for the product image */
   max-width: 100%;
   margin-bottom: 20px;
   height: 100px;
 }
 
 .product-container .product-card h3 {
-  /* Styles for the product name */
   font-size: 20px;
   margin-bottom: 10px;
 }
 
 .product-container .product-card p {
-  /* Styles for the product description */
   font-size: 16px;
   margin-bottom: 20px;
 }
 
 .product-container .product-card .price {
-  /* Styles for the product price */
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .product-container .product-card button {
-  /* Styles for the buttons */
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -142,7 +134,6 @@ nav ul li a {
 }
 
 .product-container .product-card button:hover {
-  /* Styles for the buttons on hover */
   background-color: #0056b3;
 }
 
@@ -151,4 +142,71 @@ footer {
   color: #fff;
   padding: 10px;
   text-align: center;
+}
+
+/* Responsive Styles */
+
+/* For screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .category-nav {
+    width: 100%;
+  }
+
+  .product-container {
+    width: 100%;
+  }
+
+  .product-container .product-card {
+    width: 100%;
+  }
+}
+
+/* For screens with a maximum width of 576px */
+@media (max-width: 576px) {
+  .category-nav ul li a {
+    width: 80px;
+    font-size: 12px;
+  }
+
+  .product-container .product-card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .product-container .product-card img {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .product-container .product-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .product-container .product-card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .product-container .product-card .price {
+    margin-bottom: 10px;
+  }
+
+  .product-container .product-card button {
+    padding: 8px 15px;
+  }
+
+  footer {
+    font-size: 12px;
+    position: sticky;
+  }
 }

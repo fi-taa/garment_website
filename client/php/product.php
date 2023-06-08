@@ -7,21 +7,9 @@
 </head>
 
 <body>
-    <header>
-        <h1>Garment Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="product.php">Products</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include "../includes/header.php" ?>
 
-    <div class="hero">
-        <h2>Welcome to Garment Website</h2>
-        <p>Discover our latest collection of fashionable garments</p>
-    </div>
+    <?php include "../includes/hero.php" ?>
 
     <div class="category-nav">
         <ul>
